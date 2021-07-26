@@ -4,7 +4,7 @@ A serverless keyvalue and document based database using BSON.
 
 ## What the heck is BSON?
 
-BSON is short for **Binary JavaScript Object Notation**. It is the binary encoding of JSON, created by MongoDB, and is used in their database. It allows for more datatypes, such as dates and bytes, that JSON does not allow. You can read more about it's purpose, and it's similarites and differences to JSON [here](https://bsonspec.org/).
+BSON is short for **Binary JavaScript Object Notation**. It is the binary encoding of JSON, created by MongoDB, and is used in their database. Unlike JSON, it was *actually made for* the storage of data. It is faster, and allows for more datatypes, such as dates and bytes, that JSON does not allow. You can read more about it's purpose, and it's similarites and differences to JSON [here](https://bsonspec.org/).
 
 ---
 
