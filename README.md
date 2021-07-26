@@ -1,6 +1,6 @@
 # BysonDB
 
-A serverless keyvalue and document based database using BSON.
+A serverless key-value and document based database using BSON.
 
 ## What the heck is BSON?
 
@@ -36,7 +36,7 @@ my_db["date"] = datetime.datetime.now()
 
 print(f"Today's date is {my_db['date'].strftime('%x')}")
 
-# Deleteing a key. Can't be undone, so be careful.
+# Deleting a key. Can't be undone, so be careful.
 my_db.remove("test")
 ```
 
