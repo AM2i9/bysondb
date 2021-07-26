@@ -3,6 +3,7 @@ from typing import Any
 from bysondb.base import BysonDBBase, is_bson_valid
 from bysondb.errors import InvalidTypeException
 
+
 class BysonDB(BysonDBBase):
     """
     A simple Key -> Value database.
@@ -13,8 +14,10 @@ class BysonDB(BysonDBBase):
     my_db = BysonDB("my_db.bson")
     my_db["first_name"] = "John"
     my_db["age"] = 42
+    my_db["birthdate"] = datetime.datetime(1979, 11, 4, 0, 0)
 
-    print(f"My name is {my_db["first_name"]}, and I am {my_db["age"]} years old")
+    print(f"My name is {my_db['first_name']}, and I am {my_db['age']} years old.")
+    print(f"My birthday is {my_db['birthdate'].strftime('%x')}.")
     ```
 
     Parameters

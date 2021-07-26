@@ -12,12 +12,12 @@ class BysonDocumentDB(BysonDBBase):
     Example
     -----------
     ```
-    my_db = BysonDocumentDB(""my_db.bson")
+    my_db = BysonDocumentDB("my_db.bson")
 
     my_db.insert_one({"name": "John", "age": 42})
 
     for document in my_db.find({}):
-        print(f"My name is {my_db["first_name"]}, and I am {my_db["age"]} years old")
+        print(f"My name is {my_db['first_name']}, and I am {my_db['age']} years old")
     ```
 
     Parameters
