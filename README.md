@@ -1,6 +1,6 @@
 # BysonDB
 
-A serverless key-value and document based database using BSON.
+A key-value and document based database using BSON.
 
 ## What the heck is BSON?
 
