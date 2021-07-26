@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "bysondb"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple BSON database written in Python"
 authors = ["Patrick Brennan"]
 keywords = ["bson", "database", "python"]
