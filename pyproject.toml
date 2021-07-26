@@ -3,7 +3,13 @@ name = "bysondb"
 version = "0.1.0"
 description = "A simple BSON database written in Python"
 authors = ["Patrick Brennan"]
+keywords = ["bson", "database", "python"]
+repository = "https://github.com/AM2i9/bysondb"
+readme = "README.md"
 license = "MIT"
+include = [
+    "LICENSE",
+]
 
 [tool.poetry.dependencies]
 python = "^3.9"
