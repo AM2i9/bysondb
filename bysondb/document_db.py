@@ -121,9 +121,9 @@ class BysonDocumentDB(BysonDBBase):
         if limit <= 0:
             limit = len(matches)
 
-        return matches[: limit + 1]
+        return matches[: limit]
 
-    def remove(self, query: dict, limit: Optional[int] = 1) -> None:
+    def remove(self, query: dict, limit: Optional[int] = 0) -> None:
         """
         Remove documents from the database based on a search query.
 
