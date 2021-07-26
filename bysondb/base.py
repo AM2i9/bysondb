@@ -2,6 +2,7 @@ from pathlib import Path
 from typing import Optional, Union
 
 import bson
+from bson.codec import UnknownSerializerError
 
 
 class BysonDBBase:
@@ -50,6 +51,18 @@ class BysonDBBase:
 
         if not self.path.exists():
             self.path.resolve().parent.mkdir(parents=True, exist_ok=True)
-
+        
         data = bson.dumps(self._db)
         self.path.write_bytes(data)
+
+def is_bson_valid(value) -> bool:
+    """
+    Checks if a value is able to be serialized into BSON.
+    """
+
+    try:
+        bson.dumps({"value": value})
+    except UnknownSerializerError:
+        return False
+    else:
+        return True

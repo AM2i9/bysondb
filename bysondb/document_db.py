@@ -1,6 +1,7 @@
+from bysondb.errors import InvalidTypeException
 from typing import Optional, Union, Iterable
 
-from bysondb.base import BysonDBBase
+from bysondb.base import BysonDBBase, is_bson_valid
 
 
 class BysonDocumentDB(BysonDBBase):
@@ -41,6 +42,11 @@ class BysonDocumentDB(BysonDBBase):
         """
         Stores documents into memory.
         """
+
+        for item in document.items():
+            if not is_bson_valid(item):
+                raise InvalidTypeException(item)
+
         self._db["documents"].append(document)
 
     def insert_one(self, document: dict) -> None:

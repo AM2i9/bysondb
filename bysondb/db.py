@@ -1,7 +1,7 @@
 from typing import Any
 
-from bysondb.base import BysonDBBase
-
+from bysondb.base import BysonDBBase, is_bson_valid
+from bysondb.errors import InvalidTypeException
 
 class BysonDB(BysonDBBase):
     """
@@ -29,6 +29,9 @@ class BysonDB(BysonDBBase):
         super().__init__(file, {})
 
     def __setitem__(self, key: str, value: dict) -> None:
+
+        if not is_bson_valid(value):
+            raise InvalidTypeException(value)
 
         self._db[key] = value
         self._dump()
